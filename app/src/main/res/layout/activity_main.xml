@@ -13,7 +13,7 @@
             android:layout_height="match_parent"
             tools:context=".ui.MainActivity"
             android:background="#B8CDE1"
-
+            android:visibility="gone"
     >
         <androidx.cardview.widget.CardView android:layout_width="match_parent"
                                            android:layout_height="match_parent">
@@ -36,6 +36,34 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/reloadFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:borderWidth="0dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/refresh_icon"
+            android:backgroundTint="@color/buttonBackground"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/saveFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            app:borderWidth="0dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/save_icon"
+            android:backgroundTint="@color/buttonBackground"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+
 <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/internet"
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -45,7 +73,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity"
         android:background="#B8CDE1"
-        android:visibility="gone"
+
 >
 
     <androidx.cardview.widget.CardView
@@ -58,10 +86,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:cardElevation="5dp">
+            app:cardElevation="5dp" android:layout_marginTop="8dp">
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:padding="8dp"
         >
             <TextView
 
@@ -92,7 +121,7 @@
                     app:layout_constraintVertical_bias="0.0"/>
             <com.google.android.material.chip.ChipGroup
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/editCustom" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
@@ -143,46 +172,21 @@
             </com.google.android.material.chip.ChipGroup>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/reloadFAB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:borderWidth="0dp"
-            android:clickable="true"
-            app:srcCompat="@drawable/refresh_icon"
-            android:backgroundTint="@color/buttonBackground"
-            android:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/saveFAB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
-            app:borderWidth="0dp"
-            android:clickable="true"
-            app:srcCompat="@drawable/save_icon"
-            android:backgroundTint="@color/buttonBackground"
-            android:focusable="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             app:cardCornerRadius="5dp"
-            android:id="@+id/cardView" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/customCard"
+            android:id="@+id/cardView"
             android:layout_marginStart="8dp"
             app:cardElevation="5dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/customCard">
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -201,10 +205,10 @@
                     app:layout_constraintStart_toStartOf="parent"/>
             <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="360dp"
+                    android:layout_width="0dp"
                     android:layout_height="390dp"
                     android:padding="8dp"
-                    android:scaleType="centerInside"
+                    android:scaleType="fitCenter"
                     app:layout_constraintTop_toBottomOf="@+id/memeTitle"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp"
@@ -219,4 +223,5 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
